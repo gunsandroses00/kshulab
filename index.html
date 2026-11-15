@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOKUSHU| Chaos Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <div 
+        class="logo">MOKU-<span>SHU</span></div> <!this emoji ive oaced myself cause im making this site for someone , dont even think if the code being AI generated-_->
+        <div class="status">
+            <span class="status">
+                <span class="status-dot"></span>    
+                SIMULATION ENGINE READY
+        </div>
+    </header>
+
+    <main class="workspace">
+        <section class="simulation-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">MATHEMATICAL PLAYGROUND</p>
+                    <h1>Explore the<span>unpredictable.</span></h1>
+                </div>
+                <button id="exportBtn">EXPORT PNG</button>
+            </div>
+            <div class="canvas-container">
+                <canvas id="simulationCanvas"></canvas>
+                <div class="canvas-label">LIVE SIMULATION/01</div>
+            </div>
+
+            <div class="simulation-actions">
+                <button id="startBtn">PAUSE</button>
+                <button id="resetBtn">RESEST</button>
+            </div>
+        </section>
+
+        <aside class="controls">
+            <p class="eyebrow">CONTROL PANEL</p>
+            <h2>Parameters</h2>
+            <div class="control-group">
+                <label for="modeSelect">Simulation Mode</label>
+                <select id="modeSelect">
+                    <option value="particles">Particle System</option>
+                    <option value="fractal">Mandlebrot Fractal</option>
+                </select>
+            </div>
+            <div id="fractalControls" style="display: none;">
+                <div class="control-group">
+                    <label for="zoomSlider">Fractal Zoom<span id="zoomValue">1</span>
+                    </label>
+                    <input type="range" id="zoomSlider" min="1" max="20" value="1" step="0.5">
+                </div>
+                <div class="control-group">
+                    <label for="iterationSlider">Iterations<span id="iterationValue">100</span></label>
+                    <input type="range" id="iterationSlider" min="20" max="300" value="100" step="10">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="particleSlider">
+                    Particle Count
+                    <span id="particleValue">1500</span>
+                </label>
+                <input type="range" id="particleSlider" min="200" max="5000" value="1500" step="100"> 
+            </div>
+            <div class="control-group">
+                <label for="speedSlider">
+                    Motion Speed
+                    <span id="speedValue">2.0</span>
+                </label>
+                <input type="range" id="speedSlider" min="0.5" max="5" value="2" step="0.1">
+            </div>
+            <div class="control-group">
+                <label for="chaosSlider">
+                    Chaos Factor
+                    <span  id="chaoValue">1.0</span>
+                </label>
+                <input type="range" id="chaosSlider" min="0.1" max="3" value="1" step="0.1">
+            </div>
+            <div class="control-group">
+                <label for="sizeSlider">
+                    Particle Size
+                    <span id="sizeValue">2</span>
+                </label>
+                <input type="range" id="sizeSlider" min="1" max="5" value="2" step="1">
+                <span id="sizeValue">2</span>
+            </div>
+            <div class="control-group">
+                <label for="colorSelect">Color Mode</label>
+                <select id="colorSelect">
+                    <option value="rainbow">Rainbow</option>
+                    <option value="green">Neon Green</option>
+                    <option value="purple">Electric Purple</option>
+                    <option value="blue">Cyber Blue</option>
+                </select>
+            </div>
+            <div class="control-footer">
+                <span>ENGINE</span>
+                <span>CANVAS</span>
+            </div>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
