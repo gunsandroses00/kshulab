@@ -251,4 +251,42 @@ select:focus{
         font-size: 25px;
     }
 }
+#intro-screen{
+    position:fixed;
+    inset: 0;
+    background: #080d0a;
+    color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 999999;
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+.intro-content{
+    padding: 25px;
+    max-width: 500px;
+}
+.intro-content h1{
+    color: #e9a0d0;
+    letter-spacing: 6px;
+    margin-bottom: 25px;
+}
+.intro-content p{
+    line-height: 1.8;
+    color: #cccccc;
+}
+.intro-content span{
+    display: block;
+    margin-top: 25px;
+    color: #e9a0d0;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+#intro-screen.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+
 

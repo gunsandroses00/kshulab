@@ -1,111 +1,232 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOKUSHU| Chaos Simulator</title>
+    <title>MOKU-SHU | Chaos Simulator</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header class="topbar">
-        <div 
-        class="logo">MOKU-<span>SHU</span></div> <!this emoji ive oaced myself cause im making this site for someone , dont even think if the code being AI generated-_->
+        <div class="logo">MOKU<span>-SHU</span></div>
         <div class="status">
-            <span class="status">
-                <span class="status-dot"></span>    
-                SIMULATION ENGINE READY
+            <span class="status-dot"></span>
+            SYSTEM ONLINE
         </div>
     </header>
 
     <main class="workspace">
-        <section class="simulation-section">
+
+        <section class="simulation">
             <div class="section-heading">
                 <div>
-                    <p class="eyebrow">MATHEMATICAL PLAYGROUND</p>
-                    <h1>Explore the<span>unpredictable.</span></h1>
+                    <p class="eyebrow">VISUAL ENGINE</p>
+                    <h1>CHAOS ENGINE</h1>
                 </div>
-                <button id="exportBtn">EXPORT PNG</button>
-            </div>
-            <div class="canvas-container">
-                <canvas id="simulationCanvas"></canvas>
-                <div class="canvas-label">LIVE SIMULATION/01</div>
+                <span class="live-tag">LIVE SIMULATION</span>
             </div>
 
-            <div class="simulation-actions">
+            <div class="canvas-container">
+                <canvas id="simulationCanvas"></canvas>
+            </div>
+
+            <div class="action-buttons">
                 <button id="startBtn">PAUSE</button>
-                <button id="resetBtn">RESEST</button>
+                <button id="resetBtn">RESET</button>
+                <button id="exportBtn">EXPORT IMAGE</button>
             </div>
         </section>
 
         <aside class="controls">
+
             <p class="eyebrow">CONTROL PANEL</p>
             <h2>Parameters</h2>
+
+           
+
             <div class="control-group">
                 <label for="modeSelect">Simulation Mode</label>
+
                 <select id="modeSelect">
                     <option value="particles">Particle System</option>
-                    <option value="fractal">Mandlebrot Fractal</option>
+                    <option value="fractal">Fractal Explorer</option>
                 </select>
             </div>
+
+
             <div id="fractalControls" style="display: none;">
+
                 <div class="control-group">
-                    <label for="zoomSlider">Fractal Zoom<span id="zoomValue">1</span>
+                    <label for="fractalType">Fractal Type</label>
+
+                    <select id="fractalType">
+                        <option value="mandelbrot">Mandelbrot</option>
+                        <option value="julia">Julia Set</option>
+                    </select>
+                </div>
+
+
+                <div id="juliaControls" style="display: none;">
+
+                    <div class="control-group">
+                        <label for="juliaReal">
+                            Julia Real
+                            <span id="juliaRealValue">-0.7</span>
+                        </label>
+
+                        <input
+                            type="range"
+                            id="juliaReal"
+                            min="-1"
+                            max="1"
+                            step="0.01"
+                            value="-0.7"
+                        >
+                    </div>
+
+                    <div class="control-group">
+                        <label for="juliaImag">
+                            Julia Imaginary
+                            <span id="juliaImagValue">0.27</span>
+                        </label>
+
+                        <input
+                            type="range"
+                            id="juliaImag"
+                            min="-1"
+                            max="1"
+                            step="0.01"
+                            value="0.27"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="control-group">
+                    <label for="zoomSlider">
+                        Fractal Zoom
+                        <span id="zoomValue">1</span>
                     </label>
-                    <input type="range" id="zoomSlider" min="1" max="20" value="1" step="0.5">
+
+                    <input
+                        type="range"
+                        id="zoomSlider"
+                        min="1"
+                        max="20"
+                        value="1"
+                        step="0.5"
+                    >
                 </div>
+
+
                 <div class="control-group">
-                    <label for="iterationSlider">Iterations<span id="iterationValue">100</span></label>
-                    <input type="range" id="iterationSlider" min="20" max="300" value="100" step="10">
+                    <label for="iterationSlider">
+                        Iterations
+                        <span id="iterationValue">100</span>
+                    </label>
+
+                    <input
+                        type="range"
+                        id="iterationSlider"
+                        min="20"
+                        max="300"
+                        value="100"
+                        step="10"
+                    >
                 </div>
+
             </div>
+
+            
 
             <div class="control-group">
                 <label for="particleSlider">
                     Particle Count
                     <span id="particleValue">1500</span>
                 </label>
-                <input type="range" id="particleSlider" min="200" max="5000" value="1500" step="100"> 
+
+                <input
+                    type="range"
+                    id="particleSlider"
+                    min="200"
+                    max="5000"
+                    value="1500"
+                    step="100"
+                >
             </div>
+
             <div class="control-group">
                 <label for="speedSlider">
                     Motion Speed
                     <span id="speedValue">2.0</span>
                 </label>
-                <input type="range" id="speedSlider" min="0.5" max="5" value="2" step="0.1">
+
+                <input
+                    type="range"
+                    id="speedSlider"
+                    min="0.5"
+                    max="5"
+                    value="2"
+                    step="0.1"
+                >
             </div>
+
             <div class="control-group">
                 <label for="chaosSlider">
                     Chaos Factor
-                    <span  id="chaoValue">1.0</span>
+                    <span id="chaosValue">1.0</span>
                 </label>
-                <input type="range" id="chaosSlider" min="0.1" max="3" value="1" step="0.1">
+
+                <input
+                    type="range"
+                    id="chaosSlider"
+                    min="0"
+                    max="3"
+                    value="1"
+                    step="0.1"
+                >
             </div>
+
             <div class="control-group">
                 <label for="sizeSlider">
                     Particle Size
                     <span id="sizeValue">2</span>
                 </label>
-                <input type="range" id="sizeSlider" min="1" max="5" value="2" step="1">
-                <span id="sizeValue">2</span>
+
+                <input
+                    type="range"
+                    id="sizeSlider"
+                    min="1"
+                    max="6"
+                    value="2"
+                    step="0.5"
+                >
             </div>
+
             <div class="control-group">
-                <label for="colorSelect">Color Mode</label>
+                <label for="colorSelect">Colour Mode</label>
+
                 <select id="colorSelect">
                     <option value="rainbow">Rainbow</option>
-                    <option value="green">Neon Green</option>
-                    <option value="purple">Electric Purple</option>
-                    <option value="blue">Cyber Blue</option>
+                    <option value="green">Green</option>
+                    <option value="purple">Purple</option>
+                    <option value="blue">Blue</option>
                 </select>
             </div>
-            <div class="control-footer">
-                <span>ENGINE</span>
-                <span>CANVAS</span>
-            </div>
+
         </aside>
+
     </main>
 
+    <footer>
+        <p>MOKU-SHU // EXPLORE THE UNPREDICTABLE</p>
+    </footer>
+
     <script src="script.js"></script>
-    
+
 </body>
 </html>
