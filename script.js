@@ -410,3 +410,15 @@ window.addEventListener("resize", resizeCanvas);
 
 resizeCanvas();
 animate();
+window.addEventListener("load", () => {
+    const intro = document.getElementById("intro-screen");
+
+    setTimeout(() => {
+        intro.classList.add("hide");
+
+        setTimeout(() => {
+            intro.remove();
+        }, 800);
+
+    }, 1500);
+});
