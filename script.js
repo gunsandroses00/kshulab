@@ -420,5 +420,5 @@ window.addEventListener("load", () => {
             intro.remove();
         }, 800);
 
-    }, 10);
+    }, 1000);
 });
